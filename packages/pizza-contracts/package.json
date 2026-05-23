@@ -1,0 +1,12 @@
+{
+  "name": "@nodejs-hw/pizza-contracts",
+  "version": "1.0.0",
+  "description": "Shared API contracts for pizza services",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@lokalise/api-contracts": "^6.7.0",
+    "zod": "^4.3.6"
+  }
+}
