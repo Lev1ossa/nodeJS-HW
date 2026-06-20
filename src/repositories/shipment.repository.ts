@@ -10,6 +10,7 @@ export type CreateShipmentData = {
   targetWarehouse: string;
   ingredientId: string;
   units: number;
+  createdAt?: Date;
 };
 
 export interface ShipmentRepository {
@@ -17,4 +18,5 @@ export interface ShipmentRepository {
   getShipmentById(id: string): Promise<Shipment | null>;
   getAllShipments(): Promise<Shipment[]>;
   deleteShipment(id: string): Promise<void>;
+  deleteShipmentsCreatedBefore(createdBefore: Date): Promise<number>;
 }
