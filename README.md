@@ -33,6 +33,18 @@ npm run build
 npm run dev
 ```
 
+Pizza Ordering Service runs separately:
+
+```bash
+npm run dev:ordering
+```
+
+After pulling workspace/dependency changes, run:
+
+```bash
+npm install
+```
+
 ## Test
 
 ```bash

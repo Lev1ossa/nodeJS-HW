@@ -1,0 +1,21 @@
+{
+  "name": "pizza-ordering-service",
+  "version": "1.0.0",
+  "description": "Pizza ordering backend service",
+  "private": true,
+  "scripts": {
+    "dev": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@lokalise/fastify-api-contracts": "^5.3.1",
+    "@nodejs-hw/pizza-contracts": "file:../../packages/pizza-contracts",
+    "fastify": "^5.8.4",
+    "fastify-type-provider-zod": "^6.1.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

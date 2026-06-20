@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Pizza production backend service",
   "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
   "scripts": {
     "dev": "tsx src/server.ts",
+    "dev:ordering": "tsx services/pizza-ordering-service/src/server.ts",
     "build": "tsc",
     "start": "node dist/src/server.js",
     "test": "vitest run",
@@ -15,7 +20,9 @@
   },
   "dependencies": {
     "@lokalise/api-contracts": "^6.7.0",
+    "@lokalise/backend-http-client": "^7.2.0",
     "@lokalise/fastify-api-contracts": "^5.3.1",
+    "@nodejs-hw/pizza-contracts": "file:packages/pizza-contracts",
     "dotenv": "^16.6.1",
     "drizzle-orm": "^0.44.6",
     "fastify": "^5.8.4",
