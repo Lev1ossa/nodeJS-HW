@@ -58,4 +58,26 @@ describeIfDatabaseExists('DrizzleShipmentRepository', () => {
 
     expect(deletedShipment).toBeNull();
   });
+
+  it('deletes shipments created before date', async () => {
+    await repository.createShipment({
+      targetWarehouse: 'berlin',
+      ingredientId: 'flour',
+      units: 100,
+      createdAt: new Date('2026-06-01T10:00:00.000Z')
+    });
+    await repository.createShipment({
+      targetWarehouse: 'berlin',
+      ingredientId: 'cheese',
+      units: 100,
+      createdAt: new Date('2026-06-19T10:00:00.000Z')
+    });
+
+    const deletedCount = await repository.deleteShipmentsCreatedBefore(new Date('2026-06-13T10:00:00.000Z'));
+    const shipments = await repository.getAllShipments();
+
+    expect(deletedCount).toBe(1);
+    expect(shipments).toHaveLength(1);
+    expect(shipments[0].ingredientId).toBe('cheese');
+  });
 });

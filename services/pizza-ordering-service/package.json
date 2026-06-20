@@ -11,6 +11,7 @@
     "@nodejs-hw/pizza-contracts": "file:../../packages/pizza-contracts",
     "fastify": "^5.8.4",
     "fastify-type-provider-zod": "^6.1.0",
+    "pg-boss": "^12.20.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
